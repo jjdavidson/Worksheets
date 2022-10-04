@@ -22,7 +22,7 @@ The derivative is useful for finding the slope of a tangent line to a curve desc
 
 A larger class of curves can be described by the equation $F(x,y) = 0$. Such a representation is called an \textbf{implicit} function. Figure 1 depicts the curve of the implicit function $y^2-x^3+4x-1 = 0$ along with its tangent line $y = -2x+1$ tangent at the point $(0,1)$.
 
-\section{Implicit Derivative of $y^2-x^3+4x-1 = 0$}
+\section{Implicit Differentiation Basics}
 In order to compute the derivative of an implicit function, think of the variable $y$ as an explicit function of $x$. To do this, rewrite the implicit function as $F(x,y(x)) = 0$. Using $y^2-x^3+4x-1 = 0$ as an example, the equation becomes \[y(x)^2-x^3+4x-1=0\] Next, take derivatives with respect to $x$ making sure to use the chain rule when dealing with the $y$ variable. \[2y(x)y'(x)-3x^2+4 = 0\] This final equation contains $x$ and $y$ variables as well as the derivative $y'(x)$. The final step is to solve the equation for $y'(x)$ in terms of both $x$ and $y$. \[y'(x) = \frac{3x^2-4}{2y(x)}\] We can drop the function notation with the $y$ and $y'$ variables to obtain the implicit derivative \[y' = \frac{3x^2-4}{2y}\] Observe that we need to know both the $x$ and $y$ coordinates in order to find the slope of the tangent line. Using the point $(0,1)$, the slope of the tangent line is given by $y'|_{(0,1)} = -2$, and the equation of the tangent line is $y = -2x+1$. \textbf{In summary},
 \begin{itemize}
 	\item Replace $y$ with $y(x)$
@@ -31,7 +31,7 @@ In order to compute the derivative of an implicit function, think of the variabl
 	\item Plug in $x$ and $y$ coordinates to get slope of tangent line.
 \end{itemize}
 
-\section{Implicit Derivative of $x^4 = 2(x^2-y^2)$}
+\section{Horizontal and Vertical Tangent Lines}
 Replace $y$ with $y(x)$. \[x^4 = 2(x^2-y(x)^2)\] Take the derivative of both sides. \[4x^3 = 4x+4y(x)y'(x)\] Solve for $y'(x)$. \[y'(x) = \frac{x-x^3}{y(x)}\] Drop the function notation, \[y' = \frac{x-x^3}{y}\] Oftentimes, the implicit derivative will be given as a fraction. This form can be useful for identifying vertical tangent lines and horizontal tangent lines. \textbf{Horizontal tangent lines occur when the numerator of the derivative is 0 and the denominator is nonzero.}
 
 \begin{figure}[h]
@@ -45,6 +45,21 @@ Replace $y$ with $y(x)$. \[x^4 = 2(x^2-y(x)^2)\] Take the derivative of both sid
 \textbf{Vertical tangent lines occur when the denominator of the derivative is 0 and the numerator is nonzero.}  Setting the denominator to 0 yields the equation $y=0$. Plugging this in to the original curve yields the points $(\sqrt{2},0)$, $(-\sqrt{2},0)$, and $(0,0)$. Again, the point $(0,0)$ will yield $\frac{0}{0}$ when plugged into the derivative and will not correspond to a vertical tangent line.
 
 
-\section{Second Order Implicit Derivatives}
-Consider the implicit function $x^2-y^2 = 1$. Applying the method outlined in section 2, \[y' = \frac{x}{y}\] We can repeat this process again to find the second derivative $y''(x)$. Take derivatives of both sides \[y'' = \frac{y-xy'}{y^2}\] Note that the \textbf{chain rule was not used when taking the derivative of $y'(x)$} since that is the definition of the second derivative. To eliminate $y'$ from the right side of the equation \textbf{use the equation for $y'$ solved in terms of $x$ and $y$.} \[y'' = \frac{y-x(x/y)}{y^2} = \frac{y^2-x^2}{y^3}\] At the point $(2,\sqrt{3})$ on the curve, \[y''|_{(2,\sqrt{3})} = -3^{3/2} \approx -5.196\]
-\end{document}
+\section{Second Derivatives of Implicit Functions}
+Consider the implicit function $x^2-y^2 = 1$ at the point $(2,\sqrt{3})$. Applying the method outlined in section 2, \[y' = \frac{x}{y}\] The equation of the tangent line is then \[y-\sqrt{3} = \frac{2}{\sqrt{3}}(x-2)\] We can repeat this process again to find the second derivative $y''(x)$. Taking derivatives of both sides yields \[y'' = \frac{y-xy'}{y^2}\] Note that the \textbf{chain rule was not used when taking the derivative of $y'(x)$} since that is the definition of the second derivative. To eliminate $y'$ from the right side of the equation \textbf{use the equation for $y'$ solved in terms of $x$ and $y$.} \[y'' = \frac{y-x(x/y)}{y^2} = \frac{y^2-x^2}{y^3}\] At the point $(2,\sqrt{3})$ , \[y''|_{(2,\sqrt{3})} = -3^{3/2} \approx -5.196\]
+
+\section{Logarithmic Differentiation}
+Oftentimes, a problem may be difficult or computationally tedious to solve when written in one form but may be easier or more efficiently solved in another form. Consider the polynomial \[y = (x-1)(x-2)(x-3)(x-4)\] To evaluate the derivative of this function, the product rule needs to be applied three times. Alternatively, the product of binomials can be expanded to yield a 4th degree polynomial which can be differentiated with the power rule. In either case, a lengthy computation cannot be avoided. 
+
+Since derivatives are easier to apply to sums, a mathematician would turn the product  into a sum by using the logarithm. This transforms the equation into 
+\begin{align*}
+\ln(y) &= \ln\left[(x-1)(x-2)(x-3)(x-4)\right] \\
+&= \ln(x-1) + \ln(x-2) + \ln(x-3) + \ln(x-4)
+\end{align*}
+Using the methods of implicit differentiation, this equation becomes
+\begin{align*}
+\frac{y'}{y} &= \frac{1}{x-1} + \frac{1}{x-2} + \frac{1}{x-3} + \frac{1}{x-4} \\
+\implies y' &= y\left[\frac{1}{x-1} + \frac{1}{x-2} + \frac{1}{x-3} + \frac{1}{x-4}\right]
+\end{align*}
+In order to get the derivative to only be in terms of the variable x, substitute the original equation $y = (x-1)(x-2)(x-3)(x-4)$ to obtain \[y' = (x-1)(x-2)(x-3)(x-4)\left[\frac{1}{x-1} + \frac{1}{x-2} + \frac{1}{x-3} + \frac{1}{x-4}\right]\]
+\end{document}Ç
