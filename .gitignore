@@ -2,6 +2,7 @@
 *.aux
 *.synctex.gz
 *.log
+*.dvi
 
 # Ignore OS files
 *.DS_Store
